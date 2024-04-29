@@ -1,0 +1,60 @@
+<div class="noise contrast-200 brightness-200">
+</div>
+
+<style>
+  .noise {
+    background-image: url('/noise.png');
+    position: fixed;
+    inset: 0;
+    opacity: .05;
+    animation: noise .2s infinite;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .noise{
+      animation: none;
+      background-image: none;
+    }
+  }
+
+  @keyframes noise {
+    0% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-5%, -5%);
+    }
+    20% {
+      transform: translate(-10%, 5%);
+    }
+    30% {
+      transform: translate(5%, -10%);
+    }
+    40% {
+      transform: translate(-5%, 15%);
+    }
+    50% {
+      transform: translate(-10%, 5%);
+    }
+    60% {
+      transform: translate(15%, 0%);
+    }
+    70% {
+      transform: translate(0%, 15%);
+    }
+    80% {
+      transform: translate(10%, 5%);
+    }
+    90% {
+      transform: translate(5%, 10%);
+    }
+    100% {
+      transform: translate(0%, 0%);
+    }
+  }
+
+
+
+</style>

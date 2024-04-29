@@ -1,0 +1,33 @@
+---
+import TwichLogo from "@/components/TwichLogo.astro";
+---
+
+<section class="text-xl md:text-md xl:text-xl uppercase mt-20 text-primary font-semibold">
+  <div class="logo flex justify-center mb-10">
+    <a href="https://www.twitch.tv/midudev"
+      class="hover:scale-110 hover:opacity-80 transition duration-200 hover:fill-purple-600"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <!-- <img src="./twich.svg" alt="Logo de twich" class="hover:fill-purple-600 text-red"> -->
+      <TwichLogo class="twich text-primary"/>
+    </a>
+  </div>
+  <div class="flex-col social flex md:flex-row md:gap-2 lg:gap-10">
+    <article class="md:max-w-[280px] px-24 md:px-10 py-14 md:py-20 flex items-center justify-center text-center border-primary border-y-2">
+      Presentación, pesaje, entrevista y cara a cara
+    </article>
+    <article class="flex-grow text-3xl md:text-3xl lg:text-4xl px-10 py-14 md:py-20 font-bold flex-grow-2 flex items-center justify-center text-center md:border-primary md:border-y-2">
+      <a 
+        href="https://www.twitch.tv/ibai"
+        class="cursor-pointer hover:underline hover:scale-110 hover:text-twich transition duration-100"
+        target="_blank"
+        rel="noopener noreferrer">
+        Síguelo en directo Twitch.tv/ibai
+      </a>
+    </article>
+    <article class="md:max-w-[280px] px-24 md:px-10 py-14 md:py-20 flex items-center justify-center text-center border-primary border-y-2">
+      Con la presencia de los boxeadores y boxeadoras
+    </article>
+  </div>
+</section>
