@@ -165,7 +165,7 @@ import * as THREE from 'three'
     renderer.setClearColor(currentTheme.background,1)
     light.color.setHex(currentTheme.light)
 
-    smokeParticles.forEach((particle) => {
+    smokeParticles.forEach((particle:any) => {
       particle.material.opacity = currentTheme.opacity
     })
   })
