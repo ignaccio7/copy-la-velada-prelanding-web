@@ -16,6 +16,16 @@ Para la fuente
 ```
 Y luego seguir los pasos de **https://fontsource.org/fonts/jost/install**
 
+Para la animacion del fondo threejs
+```bash
+  pnpm install three
+```
+> Para instalar los tipos de three
+```bash
+  pnpm install @types/three -D
+```
+
+
 # Recursos utilizados
 
 1. Para optimizar los svg: https://jakearchibald.github.io/svgomg/

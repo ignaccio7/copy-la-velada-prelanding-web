@@ -1,7 +1,9 @@
 ---
 // Supports weights 100-900
-import Noise from '@/components/Noise.astro';
-import '@fontsource-variable/jost';
+// import Noise from '@/components/Noise.astro';
+import SmokeBackground from "@/components/SmokeBackground.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import "@fontsource-variable/jost";
 
 interface Props {
 	title: string;
@@ -19,17 +21,48 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="canonical" href="https://lavelada.es/" />
 		<title>{title}</title>
+
+		<script is:inline>
+			function getThemePreference() {
+				const localItem =
+					typeof localStorage !== "undefined" && localStorage.getItem("theme");
+
+				if (localItem) return localItem;
+
+				return window.matchMedia("(prefers-color-scheme:dark)").matches
+					? "dark"
+					: "light";
+			}
+
+			const isDark = getThemePreference() === "dark";
+			// ESTO se puede hacer mejor
+			// document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+			document.documentElement.classList.toggle("dark", isDark); // con esto
+			
+			window.getThemePreference = getThemePreference
+		</script>
 	</head>
 	<body>
-		<Noise/>
+		<!-- <Noise/> este efecto es el que tenia como el efecto de ruido -->
+		<SmokeBackground />
 		<div class="max-w-6xl px-10 pt-20 m-auto">
 			<slot />
 		</div>
+		<ThemeToggle />
 	</body>
 </html>
 <style is:global>
 	html {
-		font-family: 'Jost Variable', system-ui, sans-serif;
+		font-family: "Jost Variable", system-ui, sans-serif;
 		background: #ddd;
+	}
+
+	:root {
+		--color-primary: #333;
+		--color-secondary: #ddd;
+	}
+	:root[class~="dark"] {
+		--color-primary: #ddd;
+		--color-secondary: #333;
 	}
 </style>
